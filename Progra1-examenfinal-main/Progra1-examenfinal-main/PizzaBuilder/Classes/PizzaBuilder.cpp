@@ -15,10 +15,15 @@ bool PizzaBuilder::AddTomato(const std::string& name, std::string& message) {
     return result.ok;
 }
 
-bool PizzaBuilder::AddCheese(const std::string&, std::string& message) {
-    // TODO: queso.
-    message = "Queso pendiente.";
-    return false;
+bool PizzaBuilder::AddCheese(const std::string& name, std::string& message) {
+    if (finished_) {
+        message = "La pizza ya está terminada.";
+        return false;
+    }
+    IngredientSelector<CheeseRepository> selector(cheeseRepo_, "queso");
+    const AddResult result = selector.AddIngredientToPizza(name, selectedCheeses_);
+    message = result.message;
+    return result.ok;
 }
 
 bool PizzaBuilder::AddMeat(const std::string&, std::string& message) {
@@ -27,10 +32,15 @@ bool PizzaBuilder::AddMeat(const std::string&, std::string& message) {
     return false;
 }
 
-bool PizzaBuilder::AddHerb(const std::string&, std::string& message) {
-    // TODO: hierba.
-    message = "Hierba pendiente.";
-    return false;
+bool PizzaBuilder::AddHerb(const std::string& name, std::string& message) {
+    if (finished_) {
+        message = "La pizza ya está terminada.";
+        return false;
+    }
+    IngredientSelector<HerbsRepository> selector(herbsRepo_, "hierba");
+    const AddResult result = selector.AddIngredientToPizza(name, selectedHerbs_);
+    message = result.message;
+    return result.ok;
 }
 
 void PizzaBuilder::Finish() {
