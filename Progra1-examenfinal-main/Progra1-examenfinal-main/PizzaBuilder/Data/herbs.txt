@@ -5,4 +5,4 @@ Thyme: 1
 Rosemary: 45
 Cilantro: 90
 Sage: 30
-Chives: 55
+Chives: 53

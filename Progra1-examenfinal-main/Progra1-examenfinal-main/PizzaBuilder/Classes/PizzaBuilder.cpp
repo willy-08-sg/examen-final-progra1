@@ -99,8 +99,12 @@ std::string PizzaBuilder::Summary() const {
     case 1:
         if (!selectedTomatoes_.empty()) {
             text += "Tu pizza solo tiene tomate.\n";
+        } else if (!selectedCheeses_.empty()) {
+            text += "Tu pizza solo tiene queso.\n";
+        } else if (!selectedMeats_.empty()) {
+            text += "Tu pizza solo tiene carne.\n";
         } else {
-            text += "Tu pizza tiene un solo tipo de ingrediente.\n";
+            text += "Tu pizza solo tiene hierbas.\n";
         }
         break;
     case 2:

@@ -4,5 +4,5 @@ Chicken: 220
 Shrimp: 148
 Mignon: 80
 Ham: 160
-Sausage: 1
+Sausage: 0
 Prosciutto: 90
