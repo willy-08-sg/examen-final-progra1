@@ -1,7 +1,7 @@
 Pepperoni: 300
-Bacon: 180
+Bacon: 179
 Chicken: 220
-Shrimp: 150
+Shrimp: 148
 Mignon: 80
 Ham: 160
 Sausage: 1
